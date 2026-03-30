@@ -49,7 +49,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-image: url('/pubg_bg.png');
+            background-image: url('pubg_bg.png');
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
@@ -197,6 +197,31 @@
             </div>
         </div>
     </div>
+
+    <!-- Orqa fonda musiqa chalish uchun -->
+    <audio id="bgMusic" src="RFHR My Heart Full Of Flames.m4a" loop autoplay></audio>
+
+    <script>
+        // Zamonaviy brauzerlarda musiqa avtomatik chalishini ta'minlash uchun:
+        // Saytning istalgan joyiga bosilganda musiqa chalinadi
+        document.body.addEventListener('click', function() {
+            var audio = document.getElementById('bgMusic');
+            if (audio.paused) {
+                audio.play();
+            }
+        });
+        
+        // Yoki sahifa yuklangan zahoti chalishga urinib ko'ramiz
+        window.addEventListener('load', function() {
+            var audio = document.getElementById('bgMusic');
+            var promise = audio.play();
+            if (promise !== undefined) {
+                promise.catch(function(error) {
+                    console.log("Brauzer avtomatik musiqani blokladi, musiqa sahifaga bosilganda chalinadi.");
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
