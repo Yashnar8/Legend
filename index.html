@@ -67,7 +67,6 @@
             z-index: 1; /* Videodan yuqorida turishi uchun */
         }
 
-        /* Asosiy card (oyna effekti) */
         .profile-container {
             border-radius: 20px;
             padding: 50px 40px;
@@ -101,21 +100,19 @@
             margin: 0 0 10px 0;
             letter-spacing: 3px;
             text-transform: uppercase;
-            color: #111; /* Qora yozuv */
+            color: #111;    
             text-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 5px rgba(255, 255, 255, 0.3);
             line-height: 1;
         }
 
         p {
             font-size: 1.3rem;
-            color: #222; /* To'qroq kulrang/qora */
             margin-bottom: 40px;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
             font-weight: 500;
             letter-spacing: 1px;
         }
 
-        /* Tugmalar konteyneri */
         .links-container {
             display: flex;
             flex-direction: column;
@@ -130,7 +127,6 @@
             gap: 15px;
             padding: 18px 20px;
             text-decoration: none;
-            color: #111; /* Tugma ichidagi matn qora */
             font-weight: 600;
             font-size: 1.2rem;
             border-radius: 15px;
@@ -144,20 +140,31 @@
 
         .link-btn:hover {
             transform: translateY(-3px);
-            /* Biros tepaga ko'tarilishi */
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
             border-color: rgba(255, 255, 255, 0.3);
             background: rgba(255, 255, 255, 0.1);
         }
 
+        /* YouTube tugmasi uchun maxsus ranglar */
+        .yt-btn {
+            color: #ff0000 !important;
+        }
+
         .yt-btn i {
-            color: #ff0000;
+            color: #ff0000 !important;
             font-size: 1.5rem;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+        }
+
+        /* Telegram tugmasi uchun maxsus ranglar */
+        .tg-btn {
+            color: #0088cc !important;
         }
 
         .tg-btn i {
-            color: #0088cc;
+            color: #0088cc !important;
             font-size: 1.5rem;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
         }
     </style>
 </head>
