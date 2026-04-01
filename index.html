@@ -70,7 +70,6 @@
         /* Asosiy card (oyna effekti) */
         .profile-container {
             background: rgba(30, 30, 40, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
             padding: 50px 40px;
             text-align: center;
@@ -82,17 +81,7 @@
             overflow: hidden;
         }
 
-        /* Yuqoridagi sariq chiziq (PUBG uslubida) */
-        .profile-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: #f2a900;
-            /* PUBG Sariq/Apelsin rangi */
-        }
+
 
         /* Paydo bo'lish animatsiyasi */
         @keyframes fadeIn {
@@ -148,8 +137,6 @@
             overflow: hidden;
             background: rgba(255, 255, 255, 0.05);
             /* Yengil fonga ega */
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            /* Yupqa chegara */
         }
 
         .link-btn:hover {
@@ -160,11 +147,6 @@
             background: rgba(255, 255, 255, 0.1);
         }
 
-        /* YouTube tugmasi uchun maxsus ranglar */
-        .yt-btn {
-            border-left: 4px solid #ff0000;
-        }
-
         .yt-btn i {
             color: #ff0000;
             font-size: 1.5rem;
@@ -172,7 +154,7 @@
 
         /* Telegram tugmasi uchun maxsus ranglar */
         .tg-btn {
-            border-left: 4px solid #0088cc;
+            /* border-left olib tashlandi */
         }
 
         .tg-btn i {
