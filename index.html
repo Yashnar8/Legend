@@ -19,23 +19,35 @@
             background-color: #0f1014;
             color: #ffffff;
             overflow: hidden;
+            /* Matnni belgilashni taqiqlash */
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
         }
 
-        .bg-image {
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+        /* YouTube background container */
+        .video-background {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: -1;
-            /* Orqa planga o'tkazish */
+            pointer-events: none;
+            overflow: hidden;
             filter: brightness(0.6);
-            /* Biroz qoraytirish */
-            transform: scale(1.05);
-            /* Har xil animatsiyalar qo'shish uchun ozgina kattalashtirish */
+        }
+
+        .video-background iframe {
+            width: 100vw;
+            height: 56.25vw; /* 16:9 ratio */
+            min-height: 100vh;
+            min-width: 177.77vh; /* 16:9 ratio */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
         .overlay {
@@ -49,10 +61,6 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-image: url('pubg_bg.png');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
         }
 
         /* Asosiy card (oyna effekti) */
@@ -174,11 +182,15 @@
 </head>
 
 <body>
-    <div class="bg-image"></div>
+    <!-- YouTube orqa fon videosi -->
+    <div class="video-background">
+        <iframe src="https://www.youtube.com/embed/RyEpAY68yCg?autoplay=1&mute=1&loop=1&playlist=RyEpAY68yCg&controls=0&showinfo=0&rel=0&enablejsapi=1&iv_load_policy=3&modestbranding=1" 
+                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
     <div class="overlay">
         <div class="profile-container">
-            <h1>PUBG PLAYER</h1>
-            <p>Xush kelibsan bratishka mani web sayitimga!!!</p>
+            <h1>PUBG MOBILE <span>PLAYERS</span></h1>
+            <p>Welcome to my website!!!</p>
 
             <div class="links-container">
                 <a href="https://t.me/legend_0o" target="_blank" class="link-btn tg-btn">
@@ -198,10 +210,15 @@
         </div>
     </div>
 
-    <!-- Orqa fonda musiqa chalish uchun -->
+    <!-- Orqa fonda musiqa chalish uchun (Original m4a fayli) -->
     <audio id="bgMusic" src="RFHR My Heart Full Of Flames.m4a" loop autoplay></audio>
 
     <script>
+        // Sichqoncha o'ng tugmasi va nusxa olishni butunlay man qilish
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.addEventListener('copy', event => event.preventDefault());
+        document.addEventListener('selectstart', event => event.preventDefault());
+
         // Zamonaviy brauzerlarda musiqa avtomatik chalishini ta'minlash uchun:
         // Saytning istalgan joyiga bosilganda musiqa chalinadi
         document.body.addEventListener('click', function() {
